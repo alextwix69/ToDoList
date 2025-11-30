@@ -39,7 +39,21 @@ int main() {
 		}
 
 		if (dec == '1') {
+			Task* newTask = new Task;
+			
+			string taskName = "";
+			int i = 0;
+			cout << "введите название задачи" << endl;
+			while (taskName.length() == 0 || taskName.length() > 50) {
+				if (i > 0) {
+					cout << "введите от 1 до 50 символов" << endl;
+				}
 
+				cin >> taskName;
+			}
+
+			newTask->name = taskName;
+			//has not done
 		}
 
 	}
