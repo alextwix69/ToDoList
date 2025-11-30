@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "x64\\Debug\\source.obj",
+            "outputs": [
+                "x64\\Debug\\source.h_782F3B5237A91BDD.ifc.dt.module.json",
+                "x64\\Debug\\source.h_782F3B5237A91BDD.ifc.dt.d.json",
+                "x64\\Debug\\source.h.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "C:\\cppProject\\ToDoList\\ToDoList\\source.h",
+                    "source-path": "c:\\cppproject\\todolist\\todolist\\source.h",
+                    "lookup-method": "absolute"
+                }
+            ],
+            "requires": []
+        }
+    ]
+}
