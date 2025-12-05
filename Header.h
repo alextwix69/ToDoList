@@ -21,3 +21,5 @@ public:
 };
 
 void filePrint(ifstream& file);
+char choose();
+void setName(Task* task);
