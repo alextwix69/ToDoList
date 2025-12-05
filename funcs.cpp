@@ -45,10 +45,10 @@ void filePrint(ifstream& file) {
 void setName(Task* task) {
 	string taskName = "";
 	int i = 0;
-	cout << "введите название задачи" << endl;
+	cout << "set task name" << endl;
 	while (taskName.length() == 0 || taskName.length() > 50) {
 		if (i > 0) {
-			cout << "введите от 1 до 50 символов" << endl;
+			cout << "put from 1 to 50 symbols" << endl;
 		}
 		i++;
 		cin >> taskName;
@@ -58,10 +58,10 @@ void setName(Task* task) {
 
 	string desc = "";
 	i = 0;
-	cout << "добавьте описание задачи" << endl;
+	cout << "add task description" << endl;
 	while (desc.length() == 0) {
 		if (i > 0) {
-			cout << "введите хотя бы 1 символ" << endl;
+			cout << "put at least 1 symbol" << endl;
 		}
 		i++;
 		cin >> desc;		
@@ -79,10 +79,10 @@ char choose() {
 			cout << "введите цифру от 1 до 4" << endl;
 		}
 
-		cout << "1 - добавить задачу" << endl
-			<< "2 - изменить статус задачи" << endl
-			<< "3 - удалить задачу из списка" << endl
-			<< "4 - сохранить и выйти" << endl;
+		cout << "1 - add task" << endl
+			<< "2 - switch complete status" << endl
+			<< "3 - erase task" << endl
+			<< "4 - save n exit" << endl;
 		cin >> dec;
 
 		i++;
