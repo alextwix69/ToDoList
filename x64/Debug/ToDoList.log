@@ -1,4 +1,1 @@
-﻿  main.cpp
-  ToDoList.vcxproj -> C:\cppProject\ToDoList\x64\Debug\ToDoList.exe
-  "pwsh.exe" не является внутренней или внешней
-  командой, исполняемой программой или пакетным файлом.
+﻿LINK : fatal error LNK1168: не удается открыть C:\cppProject\ToDoList\x64\Debug\ToDoList.exe для записи

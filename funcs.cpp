@@ -18,12 +18,7 @@ void ToDoList::renameTask(Task& actual, string newName) {
 		actual.name = newName;
 	}
 	else {
-		if (size == 0) {
-			throw std::invalid_argument("cannot add empty name");
-		}
-		else {
-			throw std::invalid_argument("cannot add name longer than 50 symbols");
-		}
+		throw std::invalid_argument("invalid name");
 	}
 }
 
