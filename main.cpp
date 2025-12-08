@@ -27,8 +27,18 @@ int main() {
 		setName(newTask);
 		list->addTask(newTask);
 	}
+
+	if (dec == '2') {
+        
+	}
     
-    if (
+    if (dec == '3') {
+        
+    }
+    
+    if (dec == '4') {
+        
+    }
 	
 	return 1;
 }
