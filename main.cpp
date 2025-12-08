@@ -24,6 +24,8 @@ int main() {
 		Task* newTask = new Task;
 		setName(newTask);
 	}
+    
+    if (
 	
 	return 1;
 }
