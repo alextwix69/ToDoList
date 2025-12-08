@@ -6,6 +6,8 @@ using namespace std;
 
 int main() {
 	setlocale(LC_ALL, "ru");
+	
+	ToDoList* list = new ToDoList;
 
 	ifstream file;
 	file.open("tasks.txt", ifstream::in);
@@ -23,6 +25,7 @@ int main() {
 	if (dec == '1') {
 		Task* newTask = new Task;
 		setName(newTask);
+		list->addTask(newTask);
 	}
 	
 	return 1;
