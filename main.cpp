@@ -1,5 +1,4 @@
 #include "header.h"
-#include <clocale>
 #include <iostream>
 #include <stdexcept>
 using namespace std;
@@ -18,23 +17,23 @@ int main() {
 			
 	file.close();
 
-	char dec = choose();
+	char pick = choose();
 
-	if (dec == '1') {
+	if (pick == '1') {
 		Task* newTask = new Task;
 		setName(newTask);
 		list->addTask(newTask);
 	}
 
-	if (dec == '2') {
+	if (pick == '2') {
         
 	}
     
-    if (dec == '3') {
+    if (pick == '3') {
         
     }
     
-    if (dec == '4') {
+    if (pick == '4') {
         
     }
 	

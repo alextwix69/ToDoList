@@ -67,20 +67,20 @@ void setName(Task* task) {
 
 char choose() {
 	cout << endl;
-	char dec = {}; //decision
+	char pick = {}; //pick
 	int i = 0;
-	while (dec - '0' > 4 || dec - '0' < 1) {
+	while (pick - '0' > 4 || pick - '0' < 1) {
 		if (i > 0) {
-			cout << "введите цифру от 1 до 4" << endl;
+			cout << "Put a valid number" << endl;
 		}
 
 		cout << "1 - add task" << endl
 			<< "2 - switch complete status" << endl
 			<< "3 - erase task" << endl
 			<< "4 - save n exit" << endl;
-		cin >> dec;
-
+		cin >> pick;
+	
 		i++;
 	}
-	return dec;
+	return pick;
 }
