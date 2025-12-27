@@ -22,8 +22,8 @@ int main() {
 		setName(newTask);
 		list->addTask(newTask);
 
-		file.open("tasks.txt", fstream::out);
-		file << newTask->name.c_str() << endl << newTask->description << endl;
+		file.open("tasks.txt", fstream::app);
+		file << endl << newTask->name.c_str() << endl << newTask->description << endl;
 		
 		if (newTask->completed) {
 			file << "Completed" << endl;
