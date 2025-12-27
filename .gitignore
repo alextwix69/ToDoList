@@ -1,3 +1,9 @@
 ToDoList.vcxproj.filters
 ToDoList.vcxproj
 ToDoList.vcxproj.user
+
+.main.cpp.swp
+.main.cpp.swo
+.funcs.cpp.swp
+.funcs.cpp.swp
+.gitingore.swp
