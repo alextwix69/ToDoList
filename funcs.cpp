@@ -2,14 +2,10 @@
 #include <vector>
 #include <stdexcept>
 #include <iostream>
+#include <string>
 
 void ToDoList::addTask(Task* actual) {
-	if (actual != nullptr) {
-		tasks.push_back(*actual);
-	}
-	else {
-		throw std::invalid_argument("task hasn't been found");
-	}
+	tasks.push_back(*actual);
 }
 
 void ToDoList::renameTask(Task& actual, string newName) {
@@ -26,7 +22,7 @@ void ToDoList::switchTask(Task& actual) {
 	actual.completed = !actual.completed;
 }
 
-void filePrint(ifstream& file) {
+void filePrint(fstream& file) {
 	if (!file.is_open()) {
 		throw std::runtime_error("file hasn't been opened");
 	}
@@ -84,3 +80,4 @@ char choose() {
 	}
 	return pick;
 }
+

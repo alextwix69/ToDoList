@@ -18,8 +18,10 @@ public:
 	void addTask(Task* actual);
 	void renameTask(Task& actual, string newName);
 	void switchTask(Task& actual);
+	int getQuant();
 };
 
-void filePrint(ifstream& file);
+void filePrint(fstream& file);
 char choose();
 void setName(Task* task);
+

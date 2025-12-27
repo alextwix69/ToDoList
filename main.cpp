@@ -6,16 +6,14 @@ using namespace std;
 int main() {	
 	ToDoList* list = new ToDoList;
 
-	ifstream file;
-	file.open("tasks.txt", ifstream::in);
+	fstream file;
+	file.open("tasks.txt", fstream::in | fstream::out);
 	try {
 		filePrint(file);
 	}
 	catch(const runtime_error& e) {
 		cout << e.what() << endl;
 	}
-			
-	file.close();
 
 	char pick = choose();
 
@@ -23,6 +21,8 @@ int main() {
 		Task* newTask = new Task;
 		setName(newTask);
 		list->addTask(newTask);
+
+
 	}
 
 	if (pick == '2') {
