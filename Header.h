@@ -24,4 +24,3 @@ public:
 void filePrint(fstream& file);
 char choose();
 void setName(Task* task);
-

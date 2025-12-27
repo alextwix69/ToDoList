@@ -1,4 +1,4 @@
-#include "Header.h"
+#include "header.h"
 #include <vector>
 #include <stdexcept>
 #include <iostream>
@@ -42,7 +42,7 @@ void setName(Task* task) {
 			cout << "put from 1 to 50 symbols" << endl;
 		}
 		i++;
-		cin >> taskName;
+		getline(cin, taskName);
 	}
 
 	task->name = taskName;
@@ -55,7 +55,7 @@ void setName(Task* task) {
 			cout << "put at least 1 symbol" << endl;
 		}
 		i++;
-		cin >> desc;		
+		getline(cin, desc);
 	}
 	task->description = desc;
 	return;
