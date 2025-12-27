@@ -4,9 +4,7 @@
 #include <stdexcept>
 using namespace std;
 
-int main() {
-	setlocale(LC_ALL, "ru");
-	
+int main() {	
 	ToDoList* list = new ToDoList;
 
 	ifstream file;
