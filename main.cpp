@@ -1,4 +1,4 @@
-#include "header.h"
+#include "Header.h"
 #include <iostream>
 #include <stdexcept>
 #include <string>
@@ -25,6 +25,13 @@ int main() {
 		file.open("tasks.txt", fstream::out);
 		file << newTask->name.c_str() << endl << newTask->description << endl;
 		
+		if (newTask->completed) {
+			file << "Completed" << endl;
+		}
+		else {
+			file << "Incompleted" << endl;
+		}
+
 		file.close();
 	}
 
