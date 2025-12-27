@@ -1,20 +1,20 @@
 #include "header.h"
 #include <iostream>
 #include <stdexcept>
+#include <string>
 using namespace std;
 
 int main() {	
 	ToDoList* list = new ToDoList;
-
 	fstream file;
-	file.open("tasks.txt", fstream::in | fstream::out);
+	file.open("tasks.txt", fstream::in);
 	try {
 		filePrint(file);
 	}
 	catch(const runtime_error& e) {
 		cout << e.what() << endl;
 	}
-
+	file.close();
 	char pick = choose();
 
 	if (pick == '1') {
@@ -22,7 +22,10 @@ int main() {
 		setName(newTask);
 		list->addTask(newTask);
 
-
+		file.open("tasks.txt", fstream::out);
+		file << newTask->name.c_str() << endl << newTask->description << endl;
+		
+		file.close();
 	}
 
 	if (pick == '2') {
@@ -36,7 +39,6 @@ int main() {
     if (pick == '4') {
         
     }
-	
 	return 1;
 }
 //
