@@ -81,3 +81,7 @@ char choose() {
 	return pick;
 }
 
+int ToDoList::getQuant(){
+	return tasks.size();
+
+}
