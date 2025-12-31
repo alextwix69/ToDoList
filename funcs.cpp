@@ -43,8 +43,11 @@ void setName(Task* task) {
 		if (i > 0) {
 			cout << "put from 1 to 50 symbols" << endl;
 		}
-		i++;
+		
 		getline(cin, taskName);
+		if (taskName.length() != 0) {
+			i++;
+		}			
 	}
 
 	task->name = taskName;

@@ -23,15 +23,9 @@ int main() {
 		list->addTask(newTask);
 
 		file.open("tasks.txt", fstream::app);
-		file << endl << newTask->name.c_str() << endl << newTask->description << endl;
-		
-		if (newTask->completed) {
-			file << "Completed" << endl;
-		}
-		else {
-			file << "Incompleted" << endl;
-		}
+		file << newTask->name.c_str() << endl << newTask->description << endl << "Incompleted" << endl;
 
+		file << "#end#" << endl; //#end# - key, which means the end of a task
 		file.close();
 	}
 
