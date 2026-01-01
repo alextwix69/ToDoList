@@ -22,8 +22,7 @@ void ToDoList::switchTask(Task& actual) {
 	actual.completed = !actual.completed;
 }
 
-void filePrint(fstream& file) 
-{
+void filePrint(fstream& file) {
 	cout << endl;
 	if (!file.is_open()) {
 		throw std::runtime_error("file hasn't been opened");

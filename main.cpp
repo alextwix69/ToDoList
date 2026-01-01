@@ -7,7 +7,7 @@ using namespace std;
 int main() {	
 	ToDoList* list = new ToDoList;
 	fstream file;
-	file.open("tasks.txt", fstream::in);
+	file.open("tasks.bin", fstream::in | fstream::binary);
 	try {
 		filePrint(file);
 	}
@@ -22,7 +22,7 @@ int main() {
 		setName(newTask);
 		list->addTask(newTask);
 
-		file.open("tasks.txt", fstream::app);
+		file.open("tasks.bin", fstream::app | fstream::binary);
 		file << newTask->name.c_str() << endl << newTask->description << endl << "Incompleted" << endl;
 
 		file << "#end#" << endl; //#end# - key, which means the end of a task
