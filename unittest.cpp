@@ -54,4 +54,19 @@ TEST_CASE("ToDoList class test") {
 
         CHECK(testTask->completed == false);
     }
+
+    ToDoList testList2;
+    fstream file;
+    file.open("tasks.bin", fstream::in | fstream::binary);
+
+    SUBCASE ("writeToVector()") {
+        testList2.writeToVector(file);
+
+        CHECK(testList2.getQuant() != 0);
+        CHECK(testList2.getQuant() == 2);
+        CHECK(testList2.TESTFUNC(0) == "name desc False");
+        CHECK(testList2.TESTFUNC(1) == "name2 desc2 True");
+    }
+
+    file.close();
 }

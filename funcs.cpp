@@ -22,6 +22,35 @@ void ToDoList::switchTask(Task& actual) {
 	actual.completed = !actual.completed;
 }
 
+int ToDoList::getQuant(){
+	return tasks.size();
+}
+
+void ToDoList::writeToVector(fstream& file) {
+	string currentS;
+	short i = 1; // 1 - name, 2 - desc, 3 - completed
+	while (getline(file, currentS)) {
+		size_t n = tasks.size();
+
+		if (currentS == "#end#" || n == 0) {
+			tasks.resize(n + 1);
+			n++;
+		}
+		
+		if (currentS != "#end#") {
+			switch (i % 3) {
+				case 1: tasks[n - 1].name = currentS; break;
+				case 2: tasks[n - 1].description = currentS; break;
+				case 0: tasks[n - 1].completed = (currentS == "Completed"); break;
+			}
+			i++;
+		}
+			
+	}
+
+	tasks.pop_back();
+}
+
 void filePrint(fstream& file) {
 	cout << endl;
 	if (!file.is_open()) {
@@ -85,7 +114,20 @@ char choose() {
 	return pick;
 }
 
-int ToDoList::getQuant(){
-	return tasks.size();
-
+string ToDoList::TESTFUNC(int n) {
+	if (n > tasks.size() - 1) {
+		return "failed";
+	}
+	string s = "";
+	s.append(tasks[n].name);
+	s.append(" ");
+	s.append(tasks[n].description);
+	s.append(" ");
+	if (tasks[n].completed) {
+		s.append("True");
+	}
+	else {
+		s.append("False");
+	}
+	return s;
 }

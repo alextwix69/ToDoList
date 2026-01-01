@@ -20,6 +20,9 @@ public:
 	void renameTask(Task& actual, string newName);
 	void switchTask(Task& actual);
 	int getQuant();
+
+	void writeToVector(fstream& file);
+	string TESTFUNC(int n);
 };
 
 void filePrint(fstream& file);
