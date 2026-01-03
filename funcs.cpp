@@ -4,6 +4,14 @@
 #include <iostream>
 #include <string>
 
+
+/*
+
+	ToDoList Funstions
+
+*/
+
+
 void ToDoList::addTask(Task* actual) {
 	tasks.push_back(*actual);
 }
@@ -27,6 +35,9 @@ int ToDoList::getQuant(){
 }
 
 void ToDoList::writeToVector(fstream& file) {
+	if (!file.is_open()) {
+		throw std::runtime_error("file has not been opened");
+	}
 	string currentS;
 	short i = 1; // 1 - name, 2 - desc, 3 - completed
 	while (getline(file, currentS)) {
@@ -47,21 +58,118 @@ void ToDoList::writeToVector(fstream& file) {
 		}
 			
 	}
-
-	tasks.pop_back();
+	if (tasks.size() != 0) {
+		tasks.pop_back();
+	}
 }
 
-void filePrint(fstream& file) {
+void ToDoList::vectorOutput() {
+	cout << "---------------------------------------------------------------" << endl;
+
+	int taskAmount = tasks.size();
+	cout << "task amount: " << taskAmount << endl;
+
+	int completedCount = 0;
+	for (int i = 0; i < taskAmount; i++) {
+		if (tasks[i].completed == true) {
+			completedCount++;
+		}
+	}
+
+	cout << "Completed: " << completedCount << endl;
+	cout << "Incompleted: " << taskAmount - completedCount << endl;
 	cout << endl;
-	if (!file.is_open()) {
-		throw std::runtime_error("file hasn't been opened");
-	}
 
-	string currentS;
-	while (getline(file, currentS)) {
-		cout << currentS << endl;
+	for (int current = 1; current <= taskAmount; current++) {
+		cout << "Task " << current << ":" << endl;
+		cout << tasks[current - 1].name << endl;
+		cout << tasks[current - 1].description << endl;
+		if (tasks[current - 1].completed) {
+			cout << "Completed" << endl;
+		}
+		else {
+			cout << "Incompleted" << endl;
+		}
+		cout << endl;
 	}
 }
+
+void ToDoList::switchTask() {
+	int taskNum = 0;
+	int i = 0;
+	while (taskNum == 0 || taskNum > tasks.size()) {
+		if (i > 0) {
+			cout << "choose existing task" << endl;
+		}
+		else {
+			cout << "choose task" << endl;
+		}
+        
+		cin >> taskNum;
+
+		i++;
+	}
+	tasks[taskNum - 1].completed = !tasks[taskNum - 1].completed;
+}
+
+void ToDoList::eraseTask() {
+	int taskNum = 0;
+	int i = 0;
+	while (taskNum == 0 || taskNum > tasks.size()) {
+		if (i > 0) {
+			cout << "choose existing task" << endl;
+		}
+		else {
+			cout << "choose task" << endl;
+		}
+        
+		cin >> taskNum;
+
+		i++;
+	}
+	tasks.erase(tasks.begin() + taskNum - 1);
+}
+
+string ToDoList::getInfo(int task, int info) {
+	switch (info) {
+		case 1: return tasks[task].name;
+		case 2: return tasks[task].description;
+		case 3:
+			if (tasks[task].completed) {
+				return "Completed";
+			}
+			else {
+				return "Incompleted";
+			}
+	}
+	return "invalid input";
+}
+/*
+string ToDoList::TESTFUNC(int n) {
+	if (n > tasks.size() - 1) {
+		return "failed";
+	}
+	string s = "";
+	s.append(tasks[n].name);
+	s.append(" ");
+	s.append(tasks[n].description);
+	s.append(" ");
+	if (tasks[n].completed) {
+		s.append("True");
+	}
+	else {
+		s.append("False");
+	}
+	return s;
+}
+*/
+
+/*
+
+	Other Functions
+
+*/
+
 
 void setName(Task* task) {
 	string taskName = "";
@@ -114,20 +222,12 @@ char choose() {
 	return pick;
 }
 
-string ToDoList::TESTFUNC(int n) {
-	if (n > tasks.size() - 1) {
-		return "failed";
+void fileRewrite(fstream& file, ToDoList* list) {
+	for (int t = 0; t < list->getQuant(); t++) {
+		for (int i = 1; i <= 3; i++) {
+			file << list->getInfo(t, i) << endl;
+		}
+		file << "#end#" << endl;
 	}
-	string s = "";
-	s.append(tasks[n].name);
-	s.append(" ");
-	s.append(tasks[n].description);
-	s.append(" ");
-	if (tasks[n].completed) {
-		s.append("True");
-	}
-	else {
-		s.append("False");
-	}
-	return s;
 }
+

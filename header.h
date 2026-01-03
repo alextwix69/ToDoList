@@ -22,9 +22,15 @@ public:
 	int getQuant();
 
 	void writeToVector(fstream& file);
-	string TESTFUNC(int n);
+	void vectorOutput();
+
+	void switchTask();
+	void eraseTask();
+
+	string getInfo(int task, int info); 
+	//string TESTFUNC(int n);
 };
 
-void filePrint(fstream& file);
 char choose();
 void setName(Task* task);
+void fileRewrite(fstream& file, ToDoList* list);
