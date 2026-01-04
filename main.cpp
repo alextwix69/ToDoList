@@ -25,12 +25,6 @@ int main() {
 			Task* newTask = new Task;
 			setName(newTask);
 			list->addTask(newTask);
-
-			file.open("tasks.bin", fstream::app | fstream::binary);
-			file << newTask->name.c_str() << endl << newTask->description << endl << "Incompleted" << endl;
-
-			file << "#end#" << endl; //#end# - key, which means the end of a task
-			file.close();
 		}
 
 		if (pick == '2') {
