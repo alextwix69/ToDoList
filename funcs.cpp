@@ -67,7 +67,7 @@ void ToDoList::vectorOutput() {
 	cout << "---------------------------------------------------------------" << endl;
 
 	int taskAmount = tasks.size();
-	cout << "task amount: " << taskAmount << endl;
+	cout << "Task amount: " << taskAmount << endl;
 
 	int completedCount = 0;
 	for (int i = 0; i < taskAmount; i++) {
