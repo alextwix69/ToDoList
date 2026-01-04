@@ -64,7 +64,7 @@ void ToDoList::writeToVector(fstream& file) {
 }
 
 void ToDoList::vectorOutput() {
-	cout << "---------------------------------------------------------------" << endl;
+	cout << "\n----------------------\n" << endl;
 
 	int taskAmount = tasks.size();
 	cout << "Task amount:\t" << taskAmount << endl;
@@ -78,19 +78,19 @@ void ToDoList::vectorOutput() {
 
 	cout << "Completed:\t" << completedCount << endl;
 	cout << "Incompleted:\t" << taskAmount - completedCount << endl;
-	cout << endl;
+	cout << "\n----------------------\n" << endl;
 
 	for (int current = 1; current <= taskAmount; current++) {
-		cout << "Task " << current << ":" << endl;
-		cout << tasks[current - 1].name << endl;
-		cout << tasks[current - 1].description << endl;
+		cout << "Task:\t" << current << endl;
+		cout << "Name:\t"<< tasks[current - 1].name << endl;
+		cout << "Desc:\t" << tasks[current - 1].description << endl;
 		if (tasks[current - 1].completed) {
-			cout << "Completed" << endl;
+			cout << "Status:\tCompleted" << endl;
 		}
 		else {
-			cout << "Incompleted" << endl;
+			cout << "Status:\tIncompleted" << endl;
 		}
-		cout << endl;
+    cout << "\n----------------------\n" << endl;
 	}
 }
 
