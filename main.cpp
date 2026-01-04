@@ -52,6 +52,15 @@ int main() {
 			file.close();
 			break;
 		}
+
+		if (pick == '5') {
+			string p{};
+			cout << "are you sure? (Y)" << endl;			
+			cin >> p;
+			if (p == "Y") {
+				break;
+			}
+		}
 	}
 	return 1;
 }

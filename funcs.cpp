@@ -206,7 +206,7 @@ char choose() {
 	cout << endl;
 	char pick = {}; //pick
 	int i = 0;
-	while (pick - '0' > 4 || pick - '0' < 1) {
+	while (pick - '0' > 5 || pick - '0' < 1) {
 		if (i > 0) {
 			cout << "Put a valid number" << endl;
 		}
@@ -214,7 +214,8 @@ char choose() {
 		cout << "1 - add task" << endl
 			<< "2 - switch complete status" << endl
 			<< "3 - erase task" << endl
-			<< "4 - save n exit" << endl;
+			<< "4 - save n exit" << endl
+			<< "5 - exit no save" << endl;
 		cin >> pick;
 	
 		i++;
