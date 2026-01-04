@@ -25,6 +25,7 @@ int main() {
 			Task* newTask = new Task;
 			setName(newTask);
 			list->addTask(newTask);
+			delete newTask;
 		}
 
 		if (pick == '2') {
@@ -56,6 +57,8 @@ int main() {
 			}
 		}
 	}
+
+	delete list;
 	return 1;
 }
 //
